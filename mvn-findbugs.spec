@@ -4,11 +4,15 @@
 #
 Name     : mvn-findbugs
 Version  : 2.0.1
-Release  : 1
+Release  : 2
 URL      : https://github.com/findbugsproject/findbugs/archive/2.0.1.tar.gz
 Source0  : https://github.com/findbugsproject/findbugs/archive/2.0.1.tar.gz
-Source1  : https://repo.gradle.org/gradle/libs-releases/com/google/code/findbugs/findbugs/2.0.1/findbugs-2.0.1.jar
-Source2  : https://repo.gradle.org/gradle/libs-releases/com/google/code/findbugs/findbugs/2.0.1/findbugs-2.0.1.pom
+Source1  : https://repo.gradle.org/gradle/libs-releases/com/google/code/findbugs/bcel/2.0.1/bcel-2.0.1.jar
+Source2  : https://repo.gradle.org/gradle/libs-releases/com/google/code/findbugs/bcel/2.0.1/bcel-2.0.1.pom
+Source3  : https://repo.gradle.org/gradle/libs-releases/com/google/code/findbugs/findbugs/2.0.1/findbugs-2.0.1.jar
+Source4  : https://repo.gradle.org/gradle/libs-releases/com/google/code/findbugs/findbugs/2.0.1/findbugs-2.0.1.pom
+Source5  : https://repo.gradle.org/gradle/libs-releases/com/google/code/findbugs/jFormatString/2.0.1/jFormatString-2.0.1.jar
+Source6  : https://repo.gradle.org/gradle/libs-releases/com/google/code/findbugs/jFormatString/2.0.1/jFormatString-2.0.1.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : AML Apache-2.0 BSD-2-Clause BSD-3-Clause CC-BY-2.5 GPL-2.0 LGPL-2.1 OLDAP-2.0
@@ -60,11 +64,23 @@ cp findbugs/licenses/LICENSE-jsr305.txt %{buildroot}/usr/share/package-licenses/
 cp findbugs/licenses/LICENSE.txt %{buildroot}/usr/share/package-licenses/mvn-findbugs/findbugs_licenses_LICENSE.txt
 cp findbugs/src/gui/edu/umd/cs/findbugs/gui2/help/License.html %{buildroot}/usr/share/package-licenses/mvn-findbugs/findbugs_src_gui_edu_umd_cs_findbugs_gui2_help_License.html
 cp findbugs/src/java/edu/umd/cs/findbugs/gui/help/License.html %{buildroot}/usr/share/package-licenses/mvn-findbugs/findbugs_src_java_edu_umd_cs_findbugs_gui_help_License.html
-mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/google/code/findbugs/findbugs/2.0.1
-cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/com/google/code/findbugs/findbugs/2.0.1/findbugs-2.0.1.jar
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/google/code/findbugs/bcel/2.0.1
+cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/com/google/code/findbugs/bcel/2.0.1/bcel-2.0.1.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/google/code/findbugs/bcel/2.0.1
+cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/com/google/code/findbugs/bcel/2.0.1/bcel-2.0.1.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/google/code/findbugs/findbugs/2.0.1
-cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/com/google/code/findbugs/findbugs/2.0.1/findbugs-2.0.1.pom
+cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/com/google/code/findbugs/findbugs/2.0.1/findbugs-2.0.1.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/google/code/findbugs/findbugs/2.0.1
+cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/com/google/code/findbugs/findbugs/2.0.1/findbugs-2.0.1.pom
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/google/code/findbugs/jFormatString/2.0.1
+cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/com/google/code/findbugs/jFormatString/2.0.1/jFormatString-2.0.1.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/google/code/findbugs/jFormatString/2.0.1
+cp %{SOURCE6} %{buildroot}/usr/share/java/.m2/repository/com/google/code/findbugs/jFormatString/2.0.1/jFormatString-2.0.1.pom
 
 
 %files
@@ -72,8 +88,12 @@ cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/com/google/code/findbug
 
 %files data
 %defattr(-,root,root,-)
+/usr/share/java/.m2/repository/com/google/code/findbugs/bcel/2.0.1/bcel-2.0.1.jar
+/usr/share/java/.m2/repository/com/google/code/findbugs/bcel/2.0.1/bcel-2.0.1.pom
 /usr/share/java/.m2/repository/com/google/code/findbugs/findbugs/2.0.1/findbugs-2.0.1.jar
 /usr/share/java/.m2/repository/com/google/code/findbugs/findbugs/2.0.1/findbugs-2.0.1.pom
+/usr/share/java/.m2/repository/com/google/code/findbugs/jFormatString/2.0.1/jFormatString-2.0.1.jar
+/usr/share/java/.m2/repository/com/google/code/findbugs/jFormatString/2.0.1/jFormatString-2.0.1.pom
 
 %files license
 %defattr(0644,root,root,0755)
